@@ -47,3 +47,15 @@ class Stack:
             removed = self.top.data
             self.top = self.top.next_node
             return removed
+
+    def __str__(self):
+        list_stack = ""
+        stack = self.top
+        while stack:
+            list_stack += (str(stack.data) + ", ")
+            stack = stack.next_node
+        list_stack = list_stack.strip(", ")
+        if len(list_stack):
+            return f"[{list_stack}]"
+        else:
+            return "[]"

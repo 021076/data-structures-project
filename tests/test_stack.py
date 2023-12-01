@@ -25,3 +25,12 @@ class TestStack(unittest.TestCase):
         removed2 = stack.pop()
         self.assertEqual(stack.top, None)
         self.assertEqual(removed2, 'data1')
+
+    def test_str_stack(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        self.assertEqual(str(stack), "[data2, data1]")
+        stack.pop()
+        stack.pop()
+        self.assertEqual(str(stack), "[]")

@@ -31,19 +31,3 @@ class Stack:
             new_node = Node(data)
             new_node.next_node = self.top
             self.top = new_node
-
-    def pop(self):
-        """
-        Метод для удаления элемента с вершины стека и его возвращения
-        :return: данные удаленного элемента
-        """
-        if self.top is None:
-            return None
-        elif self.top.next_node is None:
-            removed = self.top.data
-            self.top = None
-            return removed
-        else:
-            removed = self.top.data
-            self.top = self.top.next_node
-            return removed

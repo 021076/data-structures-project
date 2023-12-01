@@ -20,3 +20,14 @@ class TestQueue(unittest.TestCase):
         queue.dequeue()
         queue.dequeue()
         self.assertEqual(str(queue), "")
+
+    def test_dequeue_queue(self):
+        queue = Queue()
+        queue.enqueue('data1')
+        queue.enqueue('data2')
+        removed1 = queue.dequeue()
+        self.assertEqual(queue.head.data, 'data2')
+        self.assertEqual(removed1, 'data1')
+        removed2 = queue.dequeue()
+        self.assertEqual(queue.head, None)
+        self.assertEqual(removed2, 'data2')

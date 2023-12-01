@@ -44,3 +44,15 @@ class Queue:
             return list_queue
         else:
             return ""
+
+    def dequeue(self):
+        """
+        Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
+        :return: данные удаленного элемента
+        """
+        if self.head is None:
+            return None
+        else:
+            removed = self.head.data
+            self.head = self.head.next_node
+            return removed

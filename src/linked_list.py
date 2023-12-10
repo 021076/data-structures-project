@@ -1,12 +1,12 @@
 class Node:
     """Класс для узла односвязного списка"""
 
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, node):
+        self.node = node
         self.next = None  # указатель на следующий узел
 
     def __str__(self):
-        return str(self.data)
+        return str(self.node)
 
 
 class LinkedList:
@@ -41,7 +41,7 @@ class LinkedList:
             return str(None)
         ll_string = ""
         while node:
-            ll_string += f'{str(node.data)}-> '
+            ll_string += f'{str(node.node)}-> '
             node = node.next
         ll_string += 'None'
         return ll_string

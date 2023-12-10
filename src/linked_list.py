@@ -46,17 +46,16 @@ class LinkedList:
         ll_string += 'None'
         return ll_string
 
-    def to_list(self):
-        node = self.head
-        while node:
-            print(node.data)
-            node = node.next
+    def to_list(self) -> None:
+        data = self.head
+        while data:
+            print(data.node)
+            data = data.next
 
     def get_data_by_id(self, key):
-        node = self.head
-        while node:
-            if node == key:
+        data = self.head
+        while data:
+            if data.node["id"] == key:
                 return True
-            else:
-                node = node.next
+            data = data.next
         return False

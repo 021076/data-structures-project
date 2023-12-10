@@ -36,12 +36,12 @@ class LinkedList:
 
     def __str__(self) -> str:
         """Вывод данных односвязного списка в строковом представлении"""
-        node = self.head
-        if node is None:
+        data = self.head
+        if data is None:
             return str(None)
         ll_string = ""
-        while node:
-            ll_string += f'{str(node.node)}-> '
-            node = node.next
+        while data:
+            ll_string += f'{str(data.node)}-> '
+            data = data.next
         ll_string += 'None'
         return ll_string

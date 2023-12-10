@@ -45,3 +45,18 @@ class LinkedList:
             node = node.next
         ll_string += 'None'
         return ll_string
+
+    def to_list(self):
+        node = self.head
+        while node:
+            print(node.data)
+            node = node.next
+
+    def get_data_by_id(self, key):
+        node = self.head
+        while node:
+            if node == key:
+                return True
+            else:
+                node = node.next
+        return False

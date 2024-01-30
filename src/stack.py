@@ -30,7 +30,7 @@ class Stack:
             new_node = Node(data, self.next_node)
             new_node.next_node = self.top
             self.top = new_node
-        # Или рекомендация наставника: упросить метод
+        # Или рекомендация наставника: упростить метод
         # self.top = Node(data, self.top)
 
     def pop(self):

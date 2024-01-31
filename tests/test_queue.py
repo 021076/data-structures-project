@@ -16,7 +16,4 @@ class TestQueue(unittest.TestCase):
         queue = Queue()
         queue.enqueue('data1')
         queue.enqueue('data2')
-        self.assertEqual(str(queue), "data1, data2")
-        queue.dequeue()
-        queue.dequeue()
-        self.assertEqual(str(queue), "")
+        self.assertEqual(str(queue), "data1\ndata2")

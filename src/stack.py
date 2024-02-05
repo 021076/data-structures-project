@@ -60,3 +60,15 @@ class Stack:
             return f"[{list_stack}]"
         else:
             return "[]"
+
+    # Рекомендация наставника:
+    # немного сложно сделала - можно закидывать элементы в список и потом его возвращать,
+    # преобразовывая к строке, пока существует следующая нода
+    # def __str__(self) -> str:
+    #     stack_items = []
+    #     if self.top is not None:
+    #         top_node: Node = self.top
+    #         while top_node:
+    #             stack_items.append(top_node.data)
+    #             top_node = top_node.next_node
+    #     return f'{stack_items}'

@@ -50,3 +50,14 @@ class Queue:
             return list_queue
         else:
             return ""
+
+    # Рекомендация наставника:
+    # немного сложно сделала - можно закидывать элементы в список и потом его возвращать,
+    # преобразовывая к строке, пока существует следующая нода
+    # def __str__(self) -> str:
+    #     queue_items = []
+    #     head_node: Node = self.head
+    #     while head_node:
+    #         queue_items.append(str(head_node.data))
+    #         head_node = head_node.next_node
+    #     return '\n'.join(queue_items)

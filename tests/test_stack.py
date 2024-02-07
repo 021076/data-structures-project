@@ -19,8 +19,10 @@ class TestStack(unittest.TestCase):
         stack = Stack()
         stack.push('data1')
         stack.push('data2')
-        removed1 = stack.pop()
+        removed = stack.pop()
         self.assertEqual(stack.top.data, 'data1')
+        self.assertEqual(removed, 'data2')
+
         self.assertEqual(removed1, 'data2')
         removed2 = stack.pop()
         self.assertEqual(stack.top, None)

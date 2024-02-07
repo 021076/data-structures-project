@@ -36,7 +36,12 @@ class Queue:
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
         :return: данные удаленного элемента
         """
-        pass
+        if self.head is None:
+            return None
+        else:
+            removed = self.head.data
+            self.head = self.head.next_node
+            return removed
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
@@ -61,15 +66,3 @@ class Queue:
     #         queue_items.append(str(head_node.data))
     #         head_node = head_node.next_node
     #     return '\n'.join(queue_items)
-
-    def dequeue(self):
-        """
-        Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
-        :return: данные удаленного элемента
-        """
-        if self.head is None:
-            return None
-        else:
-            removed = self.head.data
-            self.head = self.head.next_node
-            return removed

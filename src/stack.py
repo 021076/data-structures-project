@@ -1,17 +1,14 @@
 class Node:
     """Класс для узла стека"""
 
-    def __init__(self, data):
+    def __init__(self, data, next_node):
         """
         Конструктор класса Node
         :param data: данные, которые будут храниться в узле
         """
         self.data = data
-        self.next_node = None
+        self.next_node = next_node
 
-
-# если init так, то не будет работать n2 = Node('a', n1)
-# если в аргументы init добавить next_node и инициализировать: self.next_node = next_node, тогда push не работает
 
 class Stack:
     """Класс для стека"""
@@ -26,11 +23,15 @@ class Stack:
         :param data: данные, которые будут добавлены на вершину стека
         """
         if self.top is None:
-            self.top = Node(data)
+            self.next_node = None
+            self.top = Node(data, None)
         else:
-            new_node = Node(data)
+            self.next_node = self.top
+            new_node = Node(data, self.next_node)
             new_node.next_node = self.top
             self.top = new_node
+        # Или рекомендация наставника: упростить метод
+        # self.top = Node(data, self.top)
 
     def pop(self):
         """
@@ -59,3 +60,15 @@ class Stack:
             return f"[{list_stack}]"
         else:
             return "[]"
+
+    # Рекомендация наставника:
+    # немного сложно сделала - можно закидывать элементы в список и потом его возвращать,
+    # преобразовывая к строке, пока существует следующая нода
+    # def __str__(self) -> str:
+    #     stack_items = []
+    #     if self.top is not None:
+    #         top_node: Node = self.top
+    #         while top_node:
+    #             stack_items.append(top_node.data)
+    #             top_node = top_node.next_node
+    #     return f'{stack_items}'

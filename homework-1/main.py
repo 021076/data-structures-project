@@ -1,13 +1,8 @@
 from src.stack import Node, Stack
 
 if __name__ == '__main__':
-    # n1 = Node(5, None)
-    # n2 = Node('a', n1)
-# если в init Node нет аргумента  next_node, то не будет работать n2 = Node('a', n1)
-# если в аргументы init добавить next_node и инициализировать: self.next_node = next_node, тогда push не работает
-
-    n1 = Node(5)
-    n2 = Node('a')
+    n1 = Node(5, None)
+    n2 = Node('a', n1)
     print(n1.data)  # 5
     print(n2.data)  # a
     print(n1)  # <__main__.Node object at 0x0000022803036050>
